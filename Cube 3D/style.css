@@ -1,0 +1,149 @@
+:root {
+    --size: 300px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: rgba(75, 120, 120, 0.3);
+}
+
+.cube {
+    margin: 12rem auto 0;
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+    /* transform: rotate(30deg) rotateZ(30deg); */
+    animation: spin 20s infinite linear; /* animation de 20 seconde à l'infinie linéaire*/
+}
+
+.side {
+    position: absolute;
+    opacity: 0.8;
+    width: var(--size);
+    height: var(--size);
+    }
+
+    #front {
+        background: img(images chats/1.JPG) no-repeat center/cover;
+        transform: translateZ(calc(var(--size) / 2));
+    }
+
+    #bottom {
+        background: img(images chats/2.JPG) no-repeat center/cover;
+        transform: rotateX(-270deg) translateY(calc(var(--size) / 2));
+        transform-origin: bottom center;
+    } /* rotateX ou rotateY ou rotateZ : pour faire pivoter un élément autour de son axe en lui indiquant un certain degré*/
+        /* translate :  */
+
+    #top {
+        background: img(images chats/3.JPG) no-repeat center/cover;
+        transform: rotateX(-270deg) translateY(calc(-1 * (var(--size) / 2)));
+        transform-origin: top center;
+    }
+
+    #left {
+        background: img(images chats/4.JPG) no-repeat center/cover;
+        transform: rotateY(270deg) translateX(calc(-1 * (var(--size) / 2)));
+        transform-origin: center left;
+    }
+
+    #right {
+        background: img(images chats/5.JPG) no-repeat center/cover;
+        transform: rotateY(-270deg) translateX(calc(var(--size) / 2));
+        transform-origin: top right;
+    }
+
+    #back {
+        background: img(images chats/5.JPG) no-repeat center/cover;
+        transform: rotateY(-180deg) translateZ(calc(var(--size) / 2));
+    }
+
+/*l'animation de rotation va se faire de 0 degré à 360 degré*/
+@keyframes spin {
+    from {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+
+
+
+/*cube 3D animé*/
+
+
+
+/*
+.container4{
+    background: rgb(118, 156, 202);
+    width: 100%;
+    height: 1000px;
+    perspective: 700px;
+    margin: 100px auto 0;
+}
+
+.cube{
+    margin: 12rem auto 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /*permet d'utiliser les 3 axex : x, y ,et z*/
+    /*animation: spin 15s infinite linear;
+}
+/*
+.face{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+
+    front {
+        background: img(images chats/1.JPG);
+        transform: rotateX(0deg) translateZ(100px);
+    }
+
+    bottom img{
+        background: img(images chats/2.JPG) linear-gradient();
+        transform: rotateX(-90deg) translateZ(100px);
+    } /* rotateX ou rotateY ou rotateZ : pour faire pivoter un élément autour de son axe en lui indiquant un certain degré*/
+        /* translate :  traduire*/
+/*
+    top img{
+        background: img(images chats/3.JPG) linear-gradient(43deg);
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    left {
+        background: img(images chats/4.JPG) linear-gradient(43deg);
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    right {
+        background: img(images chats/5.JPG) linear-gradient(43deg);
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    back {
+        background: img(images chats/5.JPG);
+        transform: rotateX(-180deg) translateZ(100px);
+    }
+
+/*l'animation de rotation va se faire de 0 degré à 360 degré*/
+/*@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+*/
+
+

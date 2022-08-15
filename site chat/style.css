@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=poppins:wgth@200;300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --size: 300px;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img{
+    width: 145px;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    width: 100%;
+    padding: 30px 0;
+}
+
+.col-2 h1{
+    text-align: center;
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25% 0;
+}
+
+.col-2 a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 30px;
+    background: rgb(192, 243, 192);
+    color: blueviolet;
+    border-radius: 30px;
+    margin-top: 25px;
+    transition: background 0.5s; /*change la couleur quand on place la souris dessus dans le temps impartis qu'on lui a donné soit 0.5s*/
+}
+
+.col-2 a:hover{
+    background: rgb(60, 150, 219);
+}
+
+p{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+.header-section{
+    margin-top: -20px;
+    background: radial-gradient(white, rgb(215, 215, 238));
+}
+
+/*style de la section categorie*/
+.categories{
+    margin: 70px 0;
+}
+
+.col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin: auto;
+}
+
+.col-3 img{
+    width: 100%;
+}
+
+.container2 h2{
+    background: rgb(241, 225, 173);
+    text-align: center;
+    font-size: 2.2rem;
+    color: rgb(0, 0, 0);
+    margin: 50px 0;
+}
+
+
+/*Section : Les chatons disponibles à l'adoption*/
+
+.container3 h2{
+    background: rgb(232, 218, 170);
+    text-align: center;
+    font-size: 2.2rem;
+    color: rgb(0, 0, 0);
+    margin: 50px 0;
+}
+
+.col-4{
+    flex-basis: 25%;
+    min-width: 200px;
+    padding: 15px;
+    transition: transform 0.4s; 
+}
+
+.col-4 img{
+    width: 100%;
+}
+
+.col-4:hover{ /*pour animer la photo de haut en bas en passant le curseur dessus*/
+    transform: translateY(-10px); 
+}
+
+
+/*Animation Cube 3D*/
+
+.container4 {
+    justify-content: center;
+    margin: 1% 30% 1% 30%;
+    width: 700px;
+    height: 650px;
+    border-radius: 1000px;
+    background-color: rgb(9, 9, 9);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    /* flex-grow: 1; //autorise à grandir
+    flex-shrink: 1; */ /*autorise à réduire*/
+}
+
+body {
+    background: rgba(127, 177, 177, 0.3);
+}
+
+.cube {
+    justify-content: center;
+    padding: 5px;
+    margin: 12rem auto 0;
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+    /* transform: rotate(30deg) rotateZ(30deg); */
+    animation: spin 20s infinite linear; /* animation de 20 seconde à l'infinie linéaire*/
+}
+
+.side {
+    position: absolute;
+    opacity: 0.9; /*opacité : effet de transparence*/
+    width: var(--size);
+    height: var(--size);
+    }
+
+    #front {
+        background: img(images chats/15) no-repeat center/cover;
+        transform: translateZ(calc(var(--size) / 2));
+    }
+
+    #bottom {
+        background: img(images chats/16.JPG) no-repeat center/cover;
+        transform: rotateX(-270deg) translateY(calc(var(--size) / 2));
+        transform-origin: bottom center;
+    } /* rotateX ou rotateY ou rotateZ : pour faire pivoter un élément autour de son axe en lui indiquant un certain degré*/
+        /* translate :  */
+
+    #top {
+        background: img(images chats/17.JPG) no-repeat center/cover;
+        transform: rotateX(-270deg) translateY(calc(-1 * (var(--size) / 2)));
+        transform-origin: top center;
+    }
+
+    #left {
+        background: img(images chats/18.JPG) no-repeat center/cover;
+        transform: rotateY(270deg) translateX(calc(-1 * (var(--size) / 2)));
+        transform-origin: center left;
+    }
+
+    #right {
+        background: img(images chats/19.JPG) no-repeat center/cover;
+        transform: rotateY(-270deg) translateX(calc(var(--size) / 2));
+        transform-origin: top right;
+    }
+
+    #back {
+        background: img(images chats/20.JPG) no-repeat center/cover;
+        transform: rotateY(-180deg) translateZ(calc(var(--size) / 2));
+    }
+
+/*l'animation de rotation va se faire de 0 degré à 360 degré*/
+@keyframes spin {
+    from {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+    /*Responsive*/
+
+    @media screen and (max-width: 800px){
+        .header-section{
+            background: rgb(198, 149, 238);
+            justify-content: center;
+            font-size: small;
+        }
+    }
+    @media screen and (max-width: 600px){
+        .header-section{
+            background: rgb(245, 241, 185);
+            justify-content: center;
+            font-size: small;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .container2{
+            font-family: fantasy;
+            font-size: small;
+            justify-content: center;
+            background-color: rgb(246, 214, 238);
+        }
+    }
+    @media screen and (max-width: 600px){
+        .container2{
+            background-color: rgb(219, 244, 237);
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .container3{
+            background-color: rgb(16, 65, 51);
+            justify-content: center;
+        }
+    }
+    @media screen and (max-width: 600px){
+        .container3{
+            background-color: rgb(87, 77, 141);
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .container4{
+            background-color: rgb(240, 246, 130);
+            justify-content: center;
+        }
+    }
+    @media screen and (max-width: 600px){
+        .container4{
+            background-color: rgb(242, 138, 140);
+            justify-content: center;
+        }
+    }
+
+
+    
+    
+
+

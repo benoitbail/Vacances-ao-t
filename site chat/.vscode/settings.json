@@ -1,0 +1,10 @@
+{
+    "git.autofetch": "all",
+    "workbench.editor.enablePreview": false,
+    "editor.accessibilityPageSize": 500,
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.columnSelection": true,
+    "editor.defaultFormatter": "aaravb.chrome-extension-developer-tools",
+    "editor.definitionLinkOpensInPeek": true
+}

@@ -1,0 +1,135 @@
+:root {
+    --size: 300px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: rgba(75, 120, 120, 0.3);
+}
+
+.cube {
+    margin: 12rem auto 0;
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+    position: relative;
+    /* transform: rotate(30deg) rotateZ(30deg); */
+    animation: spin 1500s infinite linear; /* animation de 20 seconde à l'infinie linéaire*/
+}
+
+.front{
+    transform: rotateY(-5deg) rotateZ(3deg) rotateX(10deg) !important;
+}
+.left{
+    transform: rotateY(95deg) rotateZ(2deg) rotateX(-6deg) !important;
+}
+
+.right{
+    transform: rotateY(-85deg) rotateZ(-2deg) rotateX(-10deg) !important;
+}
+
+.top{
+    transform: rotateY(-5deg) rotateZ(6deg) rotateX(-90deg) !important;
+}
+
+.bottom{
+    transform: rotateY(-5deg) rotateZ(-12deg) rotateX(95deg) !important;
+}
+
+.back{
+    transform: rotateY(175deg) rotateZ(2deg) rotateX(9deg) !important;
+}
+
+.side {
+    position: absolute;
+    opacity: 0.95;
+    width: var(--size);
+    height: var(--size);
+    font-size: 4rem;
+    font-weight: bold;
+    }
+
+    #front {
+        background: img(images chats/1.JPG) no-repeat center/cover;
+        transform: translateZ(calc(var(--size) / 2));
+    }
+
+    #bottom {
+        background: img(images chats/2.JPG) no-repeat center/cover;
+        transform: rotateX(-270deg) translateY(calc(var(--size) / 2));
+        transform-origin: bottom center;
+    } /* rotateX ou rotateY ou rotateZ : pour faire pivoter un élément autour de son axe en lui indiquant un certain degré*/
+        /* translate :  */
+
+    #top {
+        background: img(images chats/3.JPG) no-repeat center/cover;
+        transform: rotateX(-270deg) translateY(calc(-1 * (var(--size) / 2)));
+        transform-origin: top center;
+    }
+
+    #left {
+        background: img(images chats/4.JPG) no-repeat center/cover;
+        transform: rotateY(270deg) translateX(calc(-1 * (var(--size) / 2)));
+        transform-origin: center left;
+    }
+
+    #right {
+        background: img(images chats/5.JPG) no-repeat center/cover;
+        transform: rotateY(-270deg) translateX(calc(var(--size) / 2));
+        transform-origin: top right;
+    }
+
+    #back {
+        background: img(images chats/5.JPG) no-repeat center/cover;
+        transform: rotateY(-180deg) translateZ(calc(var(--size) / 2));
+    }
+
+/*l'animation de rotation va se faire de 0 degré à 360 degré*/
+@keyframes spin {
+    0% {
+        transform: rotateY(30deg) rotateZ(25deg) rotateX(8deg);
+    }
+    90% {
+        transform: rotateY(3600deg) rotateZ(3600deg) rotateX(3600deg);
+    }
+}
+
+/* Useless bottom part*/
+.content {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+}
+
+.colum {
+    padding: .1rem 1rem;
+    margin: 1rem;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid var(--main);
+    box-shadow: 0 1px 1px 1px black;
+    background: linear-gradient(100deg, rgb(32, 32, 32) 0%, rgb(19, 19, 19) 100%);
+
+}
+
+.colum i {
+    margin-right: 6px;
+
+}
+
+.colum h4 {
+    color: orange;
+}
+
+.colum p {
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+}
+
+
